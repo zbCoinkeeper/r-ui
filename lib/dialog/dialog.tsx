@@ -2,8 +2,8 @@ import { Fragment, ReactElement, ReactNode } from 'react';
 import * as React from 'react'
 import './dialog.scss';
 import { Icon } from '../index';
-import { scopedClassMaker } from '../classes';
 import * as ReactDOM from 'react-dom';
+import {scopedClassMaker} from '../helpers/classes';
 
 interface Props {
     visible: boolean;
@@ -29,7 +29,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         <Fragment>
             <div className={sc('mask')} onClick={onClickMask}>
             </div>
-            <div className={sc()}>
+            <div className={sc("")}>
                 <div className={sc('close')} onClick={onClickClose}>
                     <Icon name="close" />
                 </div>
@@ -101,4 +101,4 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
 };
 export { alert, confirm, modal };
 
-export default Dialog; 
+export default Dialog;
